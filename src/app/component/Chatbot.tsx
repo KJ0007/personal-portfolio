@@ -12,6 +12,13 @@ export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false)
   const messagesEndRef = useRef(null)
 
+  const quickQuestions = [
+    "Tell me about Kisan",
+    "Contact details",
+    "What are your skills?",
+    
+  ]
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }
@@ -20,17 +27,17 @@ export default function Chatbot() {
     if (isOpen) {
       scrollToBottom()
     }
-  }, [messages, isOpen, scrollToBottom]) // Added scrollToBottom to dependencies
+  }, [messages, isOpen, scrollToBottom])
 
-  const sendMessage = async () => {
-    if (!input.trim()) return
+  const sendMessage = async (messageText) => {
+    if (!messageText.trim()) return
 
-    const userMessage = { role: "user", content: input }
+    const userMessage = { role: "user", content: messageText }
     setMessages((prevMessages) => [...prevMessages, userMessage])
     setInput("")
 
     try {
-      const response = await axios.post("/api/ai-agent", { message: input })
+      const response = await axios.post("/api/ai-agent", { message: messageText })
       const botMessage = { role: "bot", content: response.data.reply }
       setMessages((prevMessages) => [...prevMessages, botMessage])
     } catch (err) {
@@ -39,10 +46,14 @@ export default function Chatbot() {
     }
   }
 
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleQuickQuestion = (question) => {
+    sendMessage(question)
+  }
+
+  const handleKeyPress = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault()
-      sendMessage()
+      sendMessage(input)
     }
   }
 
@@ -69,6 +80,21 @@ export default function Chatbot() {
             <div className="p-4 bg-blue-600">
               <h2 className="text-xl font-bold">AI Assistant</h2>
             </div>
+
+            {/* Quick Questions */}
+            <div className="p-2 flex flex-wrap gap-2">
+              {quickQuestions.map((question, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleQuickQuestion(question)}
+                  className="bg-gray-800 text-white text-sm px-3 py-1 rounded hover:bg-gray-700 transition"
+                >
+                  {question}
+                </button>
+              ))}
+            </div>
+
+            {/* Chat Messages */}
             <div className="h-80 overflow-y-auto p-4">
               {messages.map((msg, index) => (
                 <motion.div
@@ -87,7 +113,10 @@ export default function Chatbot() {
               ))}
               <div ref={messagesEndRef} />
             </div>
+
             {error && <p className="text-red-500 px-4 py-2">{error}</p>}
+
+            {/* Input Field */}
             <div className="p-4 border-t border-gray-700">
               <div className="flex items-center">
                 <input
@@ -99,7 +128,7 @@ export default function Chatbot() {
                   className="flex-1 p-2 bg-gray-800 text-white rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
                 />
                 <button
-                  onClick={sendMessage}
+                  onClick={() => sendMessage(input)}
                   className="bg-blue-600 text-white p-2 rounded-r-lg hover:bg-blue-700 transition-colors"
                 >
                   <Send size={20} />
@@ -112,4 +141,3 @@ export default function Chatbot() {
     </div>
   )
 }
-
