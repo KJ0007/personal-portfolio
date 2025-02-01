@@ -84,7 +84,7 @@ export default function ContactSection() {
               <div className="flex items-center">
                 <Github className="text-[#0070f3] dark:text-[#00a8ff] mr-2" />
                 <a
-                  href="https://github.com/yourgithub"
+                  href="http://github.com/KJ0007"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#0070f3] dark:hover:text-[#00a8ff] dark:text-gray-300"

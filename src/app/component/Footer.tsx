@@ -24,7 +24,7 @@ export default function Footer() {
             <div className="flex gap-4">
               {[ 
                 { icon: <Github size={20} />, href: "https://github.com/KJ0007", label: "GitHub" },
-                { icon: <Linkedin size={20} />, href: "https://linkedin.com", label: "LinkedIn" },
+                { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/kisan-jadhav-2a3b93235", label: "LinkedIn" },
                 { icon: <Mail size={20} />, href: "mailto:email.kisanjadhav@gmail.com", label: "Email" }
               ].map((item, index) => (
                 <motion.a

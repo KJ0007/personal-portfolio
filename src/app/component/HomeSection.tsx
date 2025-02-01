@@ -98,7 +98,7 @@ export default function HomeSection() {
               color="primary"
               size="large"
               startIcon={<ExternalLink />}
-              href="/Kisan_Jadhav_Resume.pdf"
+              href="https://drive.google.com/file/d/1ZXsz8V2S88K3uAN15kPGRMG_MrgsAJa8/view?usp=sharing"
               download
               className="!py-3 !px-6 !text-lg dark:text-blue-300"
             >

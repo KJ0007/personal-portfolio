@@ -6,6 +6,7 @@ import EducationSection from "./component/EducationSection"
 import ExperienceSection from "./component/ExperienceSection"
 import ProjectsSection from "./component/ProjectsSection"
 import ContactSection from "./component/ContactSection"
+import Chatbot from "./component/Chatbot"
 
 export default function Portfolio() {
   return (
@@ -17,6 +18,7 @@ export default function Portfolio() {
       <ExperienceSection />
       <ProjectsSection />
       <ContactSection />
+      <Chatbot />
     </Layout>
   )
 }
