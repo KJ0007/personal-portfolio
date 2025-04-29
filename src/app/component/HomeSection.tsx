@@ -1,8 +1,8 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { Button, Chip } from "@mui/material"
-import { FileText, ExternalLink, Briefcase, Code, ShieldCheck } from "lucide-react"
+import { motion } from "framer-motion"
+import { Briefcase, Code, ExternalLink, FileText, ShieldCheck } from "lucide-react"
 
 export default function HomeSection() {
   return (
@@ -98,7 +98,7 @@ export default function HomeSection() {
               color="primary"
               size="large"
               startIcon={<ExternalLink />}
-              href="https://drive.google.com/file/d/1ZXsz8V2S88K3uAN15kPGRMG_MrgsAJa8/view?usp=sharing"
+              href="/kisan.Jadhav_resume.pdf"
               download
               className="!py-3 !px-6 !text-lg dark:text-blue-300"
             >
