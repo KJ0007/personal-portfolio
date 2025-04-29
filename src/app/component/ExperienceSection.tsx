@@ -1,12 +1,12 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Briefcase, Rocket, Code2 } from "lucide-react"
+import { Briefcase, Code2, Rocket } from "lucide-react"
 
 const experienceData = [
   {
     position: "Software Developer",
-    company: "Exocoetus Software PVT LTD",
+    company: "ProAzure Software Solutions Pvt. Ltd",
     location: "Pune",
     period: "Apr2022 – Present",
     type: "Full-time",
@@ -36,7 +36,7 @@ const experienceData = [
   },
   {
     position: "Software Developer Intern",
-    company: "Exocoetus Software PVT LTD",
+    company: "ProAzure Software Solutions Pvt. Ltd",
     location: "Pune",
     period: "Oct 2022 - Apr 2022",
     type: "Internship",

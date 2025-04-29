@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Briefcase, Code2, Rocket, ShieldCheck } from "lucide-react"
 
+
 export default function AboutSection() {
   return (
     <section id="about" className="py-20 px-6 md:px-12 lg:px-24 bg-white dark:bg-gray-900 relative overflow-hidden transition-colors duration-300">

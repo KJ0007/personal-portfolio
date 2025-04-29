@@ -6,6 +6,8 @@ import { motion } from "framer-motion"
 import { Menu } from "lucide-react"
 import ThemeToggle from './ThemeToggle'
 
+
+
 const navItems = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
